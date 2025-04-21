@@ -1,0 +1,71 @@
+1. twilio_caller.py
+
+This script is responsible for making an emergency call using Twilio’s API.
+
+Key Components:
+
+Twilio Credentials: These credentials are necessary to interact with Twilio’s API. You'll use them to authenticate your requests.
+
+TWILIO_ACCOUNT_SID: Your Twilio Account SID (a unique identifier for your Twilio account).
+
+TWILIO_AUTH_TOKEN: Your Twilio Auth Token (used to authenticate your API requests).
+
+TWILIO_PHONE_NUMBER: The Twilio phone number from which the call will be made.
+
+Function make_emergency_call(): This function creates and initiates the emergency call using Twilio's API:
+
+Emergency Contact: A test phone number (+919667192218) to which the call will be placed.
+
+Client: Initializes the Twilio Client using the Account SID and Auth Token.
+
+Making the Call:
+Uses client.calls.create() to initiate the call.
+The to parameter is the emergency contact's number, and from_ is the Twilio phone number.
+twiml defines the message spoken when the call is picked up ("This is an emergency call from SafeGuard AI. Please respond immediately").
+Return Statement: The function returns a placeholder message "call mikey", which can be replaced by any other relevant status message.
+
+
+2. actions.py
+
+This script integrates with Rasa and calls the Twilio function (make_emergency_call()) as part of a custom action in Rasa.
+
+Key Components:
+Imports: Action and SlotSet from rasa_sdk: These are necessary to define a custom action in Rasa and set or retrieve slots (variables in Rasa that store information during a conversation).
+make_emergency_call: The function from twilio_caller.py that makes the emergency call.
+
+Class ActionCallEmergencyContact(Action): This class defines a custom action that Rasa will execute.
+
+Method name(self): This method returns the name of the action (i.e., action_call_emergency_contact). This name will be used in the Rasa domain and stories to call the action.
+
+Method run(self, dispatcher, tracker, domain): This method is called when Rasa triggers this action.
+
+dispatcher.utter_message(): Sends a message to the user (via Rasa) informing them that the emergency call was successfully initiated.
+Calling make_emergency_call(): It triggers the function that makes the emergency call. The return value of make_emergency_call() (currently "call mikey") is assigned to call_status.
+SlotSet("call_status", call_status): Sets a slot (call_status) to the returned value ("call mikey"). This can store and pass information about the call, such as its status (success, failure, etc.), to the next part of the Rasa conversation.
+
+Working of the Code:
+
+Twilio Integration (twilio_caller.py):
+
+The make_emergency_call() function makes a call using the Twilio API to the provided emergency contact number.
+It sends a message using TwiML to the recipient, indicating that it is an emergency call.
+Rasa Custom Action (actions.py):
+
+The ActionCallEmergencyContact class is a custom action that Rasa executes during a conversation.
+When Rasa triggers this action (e.g., when a user requests emergency help), it calls the make_emergency_call() function from twilio_caller.py to make the emergency call.
+Rasa then sends a message back to the user saying, "Emergency call initiated successfully."
+It also sets a slot (call_status) that stores the result of the call (the message "call mikey").
+Rasa Interaction:
+
+When a user interacts with your chatbot and requests an emergency call (via a predefined intent), Rasa triggers this custom action.
+The action makes the emergency call through Twilio and then provides feedback to the user, such as "Emergency call initiated successfully."
+How It All Fits Together:
+Twilio API makes the actual call to the emergency contact, using the credentials and phone number provided in twilio_caller.py.
+Rasa uses the custom action defined in actions.py to trigger the emergency call when the user requests it, sending an appropriate message back to the user and storing the status of the call.
+In summary, you’re integrating Twilio’s calling functionality with Rasa’s conversational AI to automatically make an emergency call when triggered by the user and provide real-time feedback during the interaction.
+
+
+
+
+
+

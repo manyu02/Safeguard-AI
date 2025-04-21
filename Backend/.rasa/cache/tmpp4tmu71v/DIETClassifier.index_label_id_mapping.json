@@ -1,0 +1,18 @@
+{
+  "0": "affirm",
+  "1": "ask_help",
+  "2": "ask_location_help",
+  "3": "ask_motivation",
+  "4": "ask_safety_tips",
+  "5": "ask_survival_tips",
+  "6": "bot_challenge",
+  "7": "deny",
+  "8": "describe_situation",
+  "9": "goodbye",
+  "10": "greet",
+  "11": "inform",
+  "12": "mood_great",
+  "13": "mood_unhappy",
+  "14": "specify_emergency_type",
+  "15": "thank_you"
+}

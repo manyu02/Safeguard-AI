@@ -1,0 +1,312 @@
+version: "3.1"
+
+nlu:
+
+- intent: specify_emergency_type
+  examples: |
+    - I need help with a fire emergency
+    - There's a medical emergency
+    - I am in danger and need police assistance
+    - fire
+    - robbers
+    - life in danger
+    - depression
+    - I need help, it's an emergency!
+    - This is a medical emergency.
+    - I'm in a crisis situation.
+    - It's life-threatening, please assist!
+    - I need immediate help.
+    - Someone is following me, what should I do?
+    - I'm in danger, what do I do now?
+    - There's a fire, I need assistance!
+
+
+- intent: inform
+  examples: |
+    - I need help with something
+    - I want to report an issue
+    - Can you assist me with this?
+    - I feel like talking
+
+
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+    - Who are you?
+    - What's your name?
+    - Tell me about yourself.
+    - What can you do?
+    - Are you a real person?
+    - Can you introduce yourself?
+    - What is SafeGuard AI?
+
+- intent: ask_help
+  examples: |
+    - Can you help me?
+    - I need help
+    - I am in trouble
+    - I need assistance
+    - Can you assist me?
+    - I am in a problem
+    - I need a solution
+    - I am scared
+
+- intent: describe_situation
+  examples: |
+    - I am in a difficult situation
+    - I am in a tough spot
+    - Someone is following me
+    - I am being threatened
+    - I am in a crisis
+
+- intent: ask_motivation
+  examples: |
+    - I'm feeling scared.
+    - I don't know what to do.
+    - Can you encourage me?
+    - I feel hopeless right now.
+    - I need some motivation.
+    - Help me stay strong.
+    - Can you say something uplifting?
+    - I feel nervous, what should I do?
+
+- intent: ask_survival_tips
+  examples: |
+    - What are some survival tips?
+    - How can I stay safe in an emergency?
+    - What should I do if I am in danger?
+    - Give me some safety tips.
+    - How can I protect myself in a crisis?
+    - What to do if I get lost?
+    - Share some survival strategies with me.
+
+
+- intent: ask_safety_tips
+  examples: |
+    - How can I stay safe in public?
+    - Give me some self-defense tips.
+    - What should I do if I feel unsafe?
+    - How do I protect myself at night?
+    - What are some emergency safety tips?
+    - How can I avoid getting into danger?
+    - Give me some survival tips.
+    - How to escape a risky situation?
+
+- intent: ask_location_help
+  examples: |
+    - Can you find my location?
+    - I need help with navigation.
+    - How can I share my location with emergency services?
+    - Find the nearest police station.
+    - Locate the nearest hospital.
+    - Can you track my location for safety?
+    - Where is the closest safe place?
+
+- intent: thank_you
+  examples: |
+    - Thanks for helping!
+    - I appreciate your assistance.
+    - That was really helpful, thank you.
+    - You're amazing, thanks!
+    - Thank you so much!
+    - I feel safer now, thanks.
+    - I appreciate it.
+
+- intent: call_emergency
+  examples: |
+    - Call the the emergency contact.
+    - I need to call emergency services.
+    - Urgent assistance.
+
+- intent: share_location
+  examples: |
+    - I am at [Andhra Pradesh](location)
+    - I am at [Amaravati](location)
+    - I am at [Arunachal Pradesh](location)
+    - I am at [Itanagar](location)
+    - I am at [Assam](location)
+    - I am at [Dispur](location)
+    - I am at [Bihar](location)
+    - I am at [Patna](location)
+    - I am at [Chhattisgarh](location)
+    - I am at [Raipur](location)
+    - I am at [Goa](location)
+    - I am at [Panaji](location)
+    - I am at [Gujarat](location)
+    - I am at [Gandhinagar](location)
+    - I am at [Haryana](location)
+    - I am at [Chandigarh](location)
+    - I am at [Himachal Pradesh](location)
+    - I am at [Shimla](location)
+    - I am at [Jharkhand](location)
+    - I am at [Ranchi](location)
+    - I am at [Karnataka](location)
+    - I am at [Bengaluru](location)
+    - I am at [Kerala](location)
+    - I am at [Thiruvananthapuram](location)
+    - I am at [Madhya Pradesh](location)
+    - I am at [Bhopal](location)
+    - I am at [Maharashtra](location)
+    - I am at [Mumbai](location)
+    - I am at [Manipur](location)
+    - I am at [Imphal](location)
+    - I am at [Meghalaya](location)
+    - I am at [Shillong](location)
+    - I am at [Mizoram](location)
+    - I am at [Aizawl](location)
+    - I am at [Nagaland](location)
+    - I am at [Kohima](location)
+    - I am at [Odisha](location)
+    - I am at [Bhubaneswar](location)
+    - I am at [Punjab](location)
+    - I am at [Chandigarh](location)
+    - I am at [Rajasthan](location)
+    - I am at [Jaipur](location)
+    - I am at [Sikkim](location)
+    - I am at [Gangtok](location)
+    - I am at [Tamil Nadu](location)
+    - I am at [Chennai](location)
+    - I am at [Telangana](location)
+    - I am at [Hyderabad](location)
+    - I am at [Tripura](location)
+    - I am at [Agartala](location)
+    - I am at [Uttar Pradesh](location)
+    - I am at [Delhi](location)
+    - I am at [Lucknow](location)
+    - I am at [Uttarakhand](location)
+    - I am at [Dehradun](location)
+    - I am at [West Bengal](location)
+    - I am at [Kolkata](location)
+    - Share my location(location)
+    - Pin my location(location)
+    - Here is my live location(location)
+    - My GPS is on, track me(location)
+    - Can you track where I am?(location)
+    - I don't know where I am, find me(location)
+    - My location is [Mumbai](location)
+    - I am in [Lucknow](location)
+    - I'm currently in [Hyderabad](location)
+    - I stay in [Bengaluru](location)
+    - I live in [Chennai](location)
+    - My city is [Kolkata](location)
+    - My place is [Jaipur](location)
+    - I am near [Patna](location)
+    - I am from [Bhopal](location)
+
+
+
+- intent: panic
+  examples: |
+    - I’m panicking
+    - Help me now!
+    - I feel scared
+    - What do I do?
+
+- intent: mood_stressed
+  examples: |
+    - I'm stressed
+    - I can't handle this
+    - I'm under pressure
+    - I feel overwhelmed
+    - I'm feeling horny
+
+- intent: ask_motivation
+  examples: |
+    - I need motivation
+    - Can you inspire me?
+    - Cheer me up please
+    - I'm losing hope
+    - Life sucks
+
+- intent: lost
+  examples: |
+    - I'm lost
+    - I don’t know where I am
+    - I can’t find my way
+    - Help me find my location
+    - lost

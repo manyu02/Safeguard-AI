@@ -1,0 +1,152 @@
+version: "3.1"
+
+stories:
+
+- story: User in panic
+  steps:
+    - intent: panic
+    - action: utter_panic_help
+    - intent: lost
+    - action: utter_lost
+    - intent: share_location
+    - action: action_get_location
+
+- story: User is stressed
+  steps:
+    - intent: mood_stressed
+    - action: utter_stay_calm
+    - intent: ask_motivation
+    - action: utter_motivation
+
+- story: Lost and scared
+  steps:
+    - intent: lost
+    - action: utter_lost
+    - intent: panic
+    - action: utter_panic_help
+
+
+- story: User asks for emergency help
+  steps:
+  - intent: ask_help
+  - action: utter_specify_emergency_type
+  - intent: specify_emergency_type
+  - action: utter_survival_tips
+
+
+- story: User asks for survival tips
+  steps:
+  - intent: ask_survival_tips
+  - action: utter_survival_tips
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+- story: User specifies an emergency
+  steps:
+  - intent: describe_situation 
+  - action: utter_situation
+  - intent: inform
+  - action: utter_emergencytype
+  - intent: specify_emergency_type
+  - action: utter_safety_guidance
+
+- story: User asks for motivation
+  steps:
+  - intent: ask_motivation
+  - action: utter_motivation
+  - intent: thank_you
+  - action: utter_thank_you
+
+- story: User asks bot's identity
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+- story: User asks for safety tips
+  steps:
+  - intent: ask_safety_tips
+  - action: utter_safety_tips
+
+- story: User asks for location help
+  steps:
+  - intent: ask_location_help
+  - action: utter_location_help
+
+- story: Emergency situation handling
+  steps:
+  - intent: describe_situation
+  - action: utter_situation
+  - intent: specify_emergency_type
+  - action: utter_safety_guidance
+  - intent: ask_location_help
+  - action: utter_location_help
+
+- story: User thanks the bot
+  steps:
+  - intent: thank_you
+  - action: utter_happy
+
+- story: User needs urgent survival tips
+  steps:
+  - intent: ask_survival_tips
+  - action: utter_survival_tips
+  - intent: describe_situation
+  - action: utter_situation
+  - intent: specify_emergency_type
+  - action: utter_safety_guidance
+
+- story: User needs reassurance
+  steps:
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: User is scared and needs location help
+  steps:
+  - intent: specify_emergency_type
+  - action: utter_situation
+  - intent: ask_location_help
+  - action: utter_location_help
+  - intent: thank_you
+  - action: utter_happy
+
+- story: User calls emergency contact
+  steps:
+  - intent: call_emergency
+  - action: action_call_emergency_contact
+
+
+- story: User shares location
+  steps:
+    - intent: share_location
+    - action: action_get_location
+
+
+

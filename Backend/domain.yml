@@ -1,0 +1,130 @@
+version: "3.1"
+
+intents:
+  - panic
+  - mood_stressed
+  - lost
+  - specify_emergency_type 
+  - inform
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - ask_help
+  - describe_situation
+  - ask_motivation
+  - ask_survival_tips
+  - ask_safety_tips
+  - ask_location_help
+  - thank_you
+  - call_emergency
+  - share_location
+
+actions:
+  - action_get_location
+  - action_call_emergency_contact
+
+entities:
+  - location
+  - latitude
+  - longitude
+
+slots:
+  user_location:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: location
+
+  user_latitude:
+    type: float
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: latitude
+
+  user_longitude:
+    type: float
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: longitude
+
+
+  call_status:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_text
+
+
+
+responses:
+  utter_cheer_up:
+    - text: "You're not alone. I'm here to help you stay safe. ❤️"
+      image: "http://localhost:5173/cheer2.png"  # Add a motivational image
+    - text: "You're not alone. I'm here to help you stay safe. ❤️"
+      image: "http://localhost:5173/cheer1.jpg"
+
+  utter_motivation:
+    - text: "Remember, even the darkest night will end and the sun will rise. You’ve got this! 💪"
+      image: "http://localhost:5173/Motivation1.png" 
+    - text: "Remember, even the darkest night will end and the sun will rise. You’ve got this! 💪" # Uplifting image
+      image: "http://localhost:5173/Motivation2.png"
+
+  utter_panic_help:
+    - text: "Take a deep breath. Help is on the way. Can you share where you are right now?"
+
+  utter_stay_calm:
+    - text: "Try to stay calm. Everything will be alright. Do you need me to call someone or share your location?"
+
+  utter_lost:
+    - text: "Let me help you get located. You can tell me where you are or I'll try to find it automatically."
+
+  utter_thank_you:
+    - text: "I'm glad I could help. Stay safe and feel free to reach out again!"
+
+  utter_survival_tips:
+  - text: "Here are some survival tips: \n- Stay aware of your surroundings. \n- Keep emergency contacts handy. \n- Find a safe place and avoid isolated areas. \n- If lost, try to stay in well-lit and populated places. \n- Trust your instincts and seek help if needed."
+  utter_greet:
+  - text: "Hello! I'm SAI, your personal safety assistant. How can I assist you today?"
+
+  utter_situation:
+  - text: "Please tell me about your situation so I can assist you better"
+  utter_emergencytype:
+  - text: "Please tell me the type of emergency—medical, crisis, life-threatening, or something else? I’ll guide you accordingly."
+
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+   - text: "Stay safe! Remember, you can always reach out if you need help. Goodbye!"
+
+  utter_iamabot:
+  - text: "I'm SafeGuard AI, here to assist you with safety-related concerns."
+
+  utter_safety_guidance:
+  - text: "Your safety is my priority. Follow these guidelines based on your emergency: \n- If medical, call emergency services immediately.\n- If in danger, move to a safe, well-lit place and seek help.\n- If in a crisis, take deep breaths and focus on finding assistance nearby.\nLet me know if you need further help."
+
+  utter_location_help:
+  - text: "If you need location-based assistance, consider the following:\n- Share your live location with a trusted contact.\n- Look for nearby police stations or public spaces.\n- Use safety apps or helplines if needed.\nWould you like me to help you with emergency contacts?"
+
+
+
+  utter_specify_emergency_type:
+  - text: "Can you clarify if your emergency is medical, life-threatening, a crisis, or something else? I'll provide relevant guidance. \n Please describe your emergency in a few words so I can provide better assistance."
+
+ 
+  utter_safety_tips:
+  - text: "Here are some general safety tips:\n- Always stay aware of your surroundings.\n- Keep emergency contacts handy.\n- Trust your instincts.\n- Avoid sharing personal details with strangers."
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
